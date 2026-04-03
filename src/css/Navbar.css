@@ -1,0 +1,72 @@
+.navbar {
+  background-color: #f3f3f3;
+ 
+  display: flex;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px #b7b7b7;
+  width: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  size: auto;
+  
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  
+  
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  
+  
+}
+
+.nav-link {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 40px;
+  transition: background-color 0.2s;
+  color: #252525;
+  display: flex;
+  align-items: center;
+  
+}
+
+.navbar-logo {
+  height: 55px;
+  object-fit: contain;
+  cursor: pointer;
+}
+.navbar-text {
+  
+  height: 55px;
+  object-fit: contain;
+  cursor: pointer;
+  
+}
+
+
+.nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #252525;
+  
+  
+}
+
+.nav-link.active {
+  background-color: #252525;
+  color: #f2f0f0;
+  .chevron-icon {
+    fill: #f2f0f0;
+  }
+  
+  
+}
