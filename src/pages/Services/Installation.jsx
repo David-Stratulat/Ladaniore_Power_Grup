@@ -1,7 +1,7 @@
 import ContactSection from "../../components/ContactSection";
 
 
-function Instalare() {
+function Installation() {
   return (
     <>
       <div>
@@ -16,4 +16,4 @@ function Instalare() {
   );
 }
 
-export default Instalare;
+export default Installation;
