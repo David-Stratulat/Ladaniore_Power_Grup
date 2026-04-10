@@ -1,26 +1,32 @@
 :root {
   --nav-bg: #f3f3f3;
+  --nav-opacity-bg: rgba(243, 243, 243, 0.85); /* opacitate */
   --nav-text: #252525;
   --nav-hover-bg: rgba(0, 0, 0, 0.1);
   --nav-active-bg: #252525;
   --nav-active-text: #f2f0f0;
-  --shadow: 0 2px 4px #b7b7b7;
+  --shadow: 0 4px 12px rgba(0,0,0,0.15);
   --transition: 0.25s ease;
 }
 
-
 .navbar {
-  background-color: var(--nav-bg);
+  background-color: var(--nav-opacity-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   box-shadow: var(--shadow);
+
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+
+  transition: background-color var(--transition), backdrop-filter var(--transition);
 }
 
 .navbar-brand {
@@ -63,7 +69,6 @@
   color: var(--nav-active-text);
 }
 
-
 .chevron-icon {
   font-size: 0.8rem;
   transition: transform 0.25s ease, fill 0.25s ease;
@@ -88,7 +93,8 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
   padding: 0.7rem 0;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
@@ -96,6 +102,7 @@
   flex-direction: column;
   min-width: 180px;
   z-index: 999;
+  transition: var(--transition);
 }
 
 .nav-item-with-dropdown:hover .flydown-menu {

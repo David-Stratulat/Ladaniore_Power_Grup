@@ -1,0 +1,67 @@
+:root {
+  --cal-bg: #ffffff;
+  --cal-text: #252525;
+  --cal-subtext: #555;
+  --cal-card-bg: rgba(255, 255, 255, 0.85);
+  --cal-card-hover-bg: rgba(255, 255, 255, 1);
+  --cal-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  --cal-shadow-hover: 0 6px 20px rgba(0,0,0,0.18);
+  --transition: 0.3s ease;
+}
+
+.calitati-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: var(--cal-bg);
+}
+
+.calitati-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  color: var(--cal-text);
+}
+
+.calitati-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.calitate-card {
+  background: var(--cal-card-bg);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: var(--cal-shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calitate-card:hover {
+  background: var(--cal-card-hover-bg);
+  transform: translateY(-6px);
+  box-shadow: var(--cal-shadow-hover);
+}
+
+.calitate-card .emoji {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.calitate-card h3 {
+  font-size: 1.4rem;
+  color: var(--cal-text);
+  margin-bottom: 0.6rem;
+}
+
+.calitate-card h5 {
+  font-size: 1rem;
+  color: var(--cal-subtext);
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 260px;
+}
