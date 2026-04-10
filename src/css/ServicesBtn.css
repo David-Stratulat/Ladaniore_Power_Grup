@@ -1,0 +1,60 @@
+:root {
+  --srv-card-bg: rgba(255, 255, 255, 0.85);
+  --srv-card-hover-bg: #ffffff;
+  --srv-text: #252525;
+  --srv-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  --srv-shadow-hover: 0 8px 24px rgba(0,0,0,0.18);
+  --transition: 0.3s ease;
+}
+
+.services-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.services-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  color: var(--srv-text);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: var(--srv-card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: var(--srv-text);
+  box-shadow: var(--srv-shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-card:hover {
+  background: var(--srv-card-hover-bg);
+  transform: translateY(-6px);
+  box-shadow: var(--srv-shadow-hover);
+}
+
+.service-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.4rem;
+  margin: 0;
+}
