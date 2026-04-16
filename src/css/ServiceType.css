@@ -1,0 +1,101 @@
+:root {
+  --srv-bg: #ffffff;
+  --srv-text: #252525;
+  --srv-subtext: #555;
+  --srv-accent: #252525;
+  --srv-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  --transition: 0.35s ease;
+}
+
+.servicii-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  padding: 4rem 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  background: var(--srv-bg);
+}
+
+.servicii-left {
+  flex: 1;
+}
+
+.servicii-left h2 {
+  font-size: 2.4rem;
+  color: var(--srv-text);
+  margin-bottom: 1.5rem;
+}
+
+.servicii-left p {
+  font-size: 1.1rem;
+  color: var(--srv-subtext);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.servicii-left ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.servicii-left li {
+  font-size: 1.1rem;
+  color: var(--srv-text);
+  margin-bottom: 0.6rem;
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.servicii-left li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--srv-accent);
+  font-weight: bold;
+}
+
+.servicii-right {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+.servicii-right img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: var(--srv-shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.img1 {
+  grid-column: span 2;
+  height: 260px;
+}
+
+.servicii-right img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+}
+
+@media (max-width: 900px) {
+  .servicii-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .servicii-right {
+    grid-template-columns: 1fr;
+  }
+
+  .img1 {
+    grid-column: span 1;
+    height: 220px;
+  }
+}

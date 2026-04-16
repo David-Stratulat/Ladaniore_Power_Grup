@@ -2,14 +2,17 @@ import ContactSection from '../components/ContactSection';
 import "../css/Home.css"
 import HomePageImg from "../assets/HomePageImg.jpeg"
 import Qualities from "../components/Qualities"
-import servicesBtn from '../components/ServicesBtn';
+import ServicesBtn from '../components/ServicesBtn';
+import ServiceType from "../components/ServiceType";
+
 
 function Home() {
   return (
     <>
     <img src={HomePageImg} alt="Home Page" className="home-image" />
     <Qualities/>
-    <servicesBtn/>
+    <ServiceType />
+    <ServicesBtn/>
 
     <div className="home">
       <h1>Welcome to the Home Page!</h1>
