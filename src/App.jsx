@@ -7,8 +7,7 @@ import Services from './pages/Services/Services'
 import Maintenance from './pages/Services/Maintenance'
 import Installation from './pages/Services/Installation'
 import Consultance from './pages/Services/Consultance'
-
-import Contact from './pages/contact'
+import Contact from './pages/Contact'
 import './App.css'
 
 function App() {
@@ -20,7 +19,7 @@ function App() {
       <Route path='/' element={<Home />} />
       <Route path='/despre-companie' element={<DespreCompanie />} />
       <Route path='/portofoliu' element={<Portfolio />} />
-      <Route path='/contact' element={<Contact />} />
+      <Route path="/contact" element={<Contact />} />
       <Route path='/servicii' element={<Services />} />
       <Route path='/servicii/mentenanta' element={<Maintenance />} />
       <Route path='/servicii/instalare' element={<Installation />} />
