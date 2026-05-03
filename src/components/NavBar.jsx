@@ -4,11 +4,11 @@ import logo from "../assets/logo.png";
 import text from "../assets/text.png";
 import "../css/Navbar.css";
 import Flydown from "./Flydown";
+import HamburgerMenu from "./HamburgerMenu";
 
 function NavBar() {
   const { pathname } = useLocation();
 
-  
   const isActive = (path) => pathname.startsWith(path);
 
   return (
@@ -18,55 +18,66 @@ function NavBar() {
         <img src={text} alt="Text Logo" className="navbar-text" />
       </div>
 
-      <div className="navbar-links">
+      <div className="mobile-menu">
+        <HamburgerMenu />
+      </div>
 
-        <Link to="/" className={`nav-link ${pathname === "/" ? "active" : ""}`}>
-          Acasa
-        </Link>
-
-        <Link
-          to="/despre-companie"
-          className={`nav-link ${isActive("/despre-companie") ? "active" : ""}`}
-        >
-          Despre companie
-        </Link>
-
-        {/* Dropdown Servicii */}
-        <div className="nav-item-with-dropdown">
+      <div className="desktop-menu">
+        <div className="navbar-links">
           <Link
-            to="/servicii"
-            className={`nav-link ${isActive("/servicii") ? "active" : ""}`}
+            to="/"
+            className={`nav-link ${pathname === "/" ? "active" : ""}`}
           >
-            Servicii
-            <FaChevronDown className="chevron-icon" />
+            Acasa
           </Link>
 
-          <Flydown>
-            <Link to="/servicii/mentenanta" className="flydown-link">
-              Mentenanță
+          <Link
+            to="/despre-companie"
+            className={`nav-link ${
+              isActive("/despre-companie") ? "active" : ""
+            }`}
+          >
+            Despre companie
+          </Link>
+
+          <div className="nav-item-with-dropdown">
+            <Link
+              to="/servicii"
+              className={`nav-link ${
+                isActive("/servicii") ? "active" : ""
+              }`}
+            >
+              Servicii
+              <FaChevronDown className="chevron-icon" />
             </Link>
-            <Link to="/servicii/instalare" className="flydown-link">
-              Instalare
-            </Link>
-            <Link to="/servicii/consultanta" className="flydown-link">
-              Consultanță
-            </Link>
-          </Flydown>
+
+            <Flydown>
+              <Link to="/servicii/mentenanta" className="flydown-link">
+                Mentenanță
+              </Link>
+              <Link to="/servicii/instalare" className="flydown-link">
+                Instalare
+              </Link>
+              <Link to="/servicii/consultanta" className="flydown-link">
+                Consultanță
+              </Link>
+            </Flydown>
+          </div>
+
+          <Link
+            to="/portofoliu"
+            className={`nav-link ${isActive("/portofoliu") ? "active" : ""}`}
+          >
+            Portofoliu
+          </Link>
+
+          <Link
+            to="/contact"
+            className={`nav-link ${isActive("/contact") ? "active" : ""}`}
+          >
+            Contact
+          </Link>
         </div>
-
-        <Link
-          to="/portofoliu"
-          className={`nav-link ${isActive("/portofoliu") ? "active" : ""}`}
-        >
-          Portofoliu
-        </Link>
-
-        <Link
-          to="/contact"
-          className={`nav-link ${isActive("/contact") ? "active" : ""}`}
-        >
-          Contact
-        </Link>
       </div>
     </nav>
   );
