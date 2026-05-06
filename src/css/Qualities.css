@@ -1,67 +1,140 @@
 :root {
-  --cal-bg: #ffffff;
-  --cal-text: #252525;
-  --cal-subtext: #555;
-  --cal-card-bg: rgba(255, 255, 255, 0.85);
-  --cal-card-hover-bg: rgba(255, 255, 255, 1);
-  --cal-shadow: 0 4px 14px rgba(0,0,0,0.12);
-  --cal-shadow-hover: 0 6px 20px rgba(0,0,0,0.18);
-  --transition: 0.3s ease;
+  --cal-bg: #f7f4ee;
+  --cal-text: #111827;
+  --cal-subtext: rgba(17, 24, 39, 0.64);
+  --cal-card-bg: rgba(255, 255, 255, 0.72);
+  --cal-card-hover-bg: rgba(255, 255, 255, 0.94);
+  --cal-border: rgba(17, 24, 39, 0.08);
+  --cal-gold: #c99a55;
+  --cal-gold-soft: rgba(201, 154, 85, 0.14);
+  --cal-shadow: 0 18px 45px rgba(17, 24, 39, 0.08);
+  --cal-shadow-hover: 0 28px 65px rgba(17, 24, 39, 0.14);
+  --transition: 0.25s ease;
 }
 
 .calitati-section {
-  padding: 4rem 2rem;
+  position: relative;
+  padding: 6rem 2rem;
   text-align: center;
-  background: var(--cal-bg);
+  background:
+    radial-gradient(circle at top left, rgba(201, 154, 85, 0.14), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, var(--cal-bg) 100%);
+  overflow: hidden;
 }
 
 .calitati-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 2.5rem;
+  max-width: 760px;
+  margin: 0 auto 3.2rem;
   color: var(--cal-text);
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.05em;
 }
 
 .calitati-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  max-width: 1100px;
+  gap: 1.4rem;
+  max-width: 1160px;
   margin: 0 auto;
 }
 
 .calitate-card {
-  background: var(--cal-card-bg);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-radius: 18px;
-  box-shadow: var(--cal-shadow);
-  transition: var(--transition);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  min-height: 260px;
+  padding: 2.2rem 2rem;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  text-align: left;
+
+  background: var(--cal-card-bg);
+  border: 1px solid var(--cal-border);
+  border-radius: 28px;
+  backdrop-filter: blur(14px);
+
+  box-shadow: var(--cal-shadow);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    background var(--transition),
+    border-color var(--transition);
+}
+
+.calitate-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(201, 154, 85, 0.22), transparent 28%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.8), transparent 55%);
+  opacity: 0;
+  transition: opacity var(--transition);
 }
 
 .calitate-card:hover {
+  transform: translateY(-8px);
   background: var(--cal-card-hover-bg);
-  transform: translateY(-6px);
+  border-color: rgba(201, 154, 85, 0.28);
   box-shadow: var(--cal-shadow-hover);
 }
 
+.calitate-card:hover::before {
+  opacity: 1;
+}
+
 .calitate-card .emoji {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1.4rem;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 2rem;
+  border-radius: 18px;
+
+  background: var(--cal-gold-soft);
+  border: 1px solid rgba(201, 154, 85, 0.22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
 }
 
 .calitate-card h3 {
-  font-size: 1.4rem;
+  margin: 0 0 0.75rem;
   color: var(--cal-text);
-  margin-bottom: 0.6rem;
+  font-size: 1.35rem;
+  line-height: 1.15;
+  font-weight: 850;
+  letter-spacing: -0.03em;
 }
 
 .calitate-card h5 {
-  font-size: 1rem;
+  max-width: 290px;
+  margin: 0;
   color: var(--cal-subtext);
-  font-weight: 400;
-  line-height: 1.5;
-  max-width: 260px;
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+  .calitati-section {
+    padding: 4.2rem 1rem;
+  }
+
+  .calitati-container {
+    grid-template-columns: 1fr;
+  }
+
+  .calitate-card {
+    min-height: auto;
+    padding: 1.8rem;
+    border-radius: 24px;
+  }
 }
