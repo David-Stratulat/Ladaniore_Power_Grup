@@ -1,13 +1,13 @@
-import ContactSection from '../components/ContactSection';  
-import "../css/Portfolio.css";
-import { projects } from "../components/Projects";
+import Footer from '../components/Footer';
+import '../css/Portofoliu.css';
+import { proiecte } from '../components/Proiecte';
 
 
-function Portfolio() {
+function Portofoliu() {
   return (
     <div className="portfolio-wrapper">
       <div className="project-map">
-        {projects.map((project) => (
+        {proiecte.map((project) => (
           <div className="project-card" key={project.id}>
             <img src={project.image} alt={project.title} />
             <div className="overlay">
@@ -17,9 +17,9 @@ function Portfolio() {
         </div>
       ))}
     </div>
-    <ContactSection />
+    <Footer />
     </div>
   );
 };
 
-export default Portfolio;
+export default Portofoliu;

@@ -1,8 +1,8 @@
-import "../css/ContactForm.css";
+import '../css/FormularContact.css';
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 
-function ContactForm() {
+function FormularContact() {
   const [state, handleSubmit] = useForm("xbdqkjzl");
 
   if (state.succeeded) {
@@ -48,4 +48,4 @@ function ContactForm() {
   );
 }
 
-export default ContactForm;
+export default FormularContact;

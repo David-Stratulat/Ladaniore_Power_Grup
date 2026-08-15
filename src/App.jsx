@@ -1,29 +1,29 @@
 import { Route, Routes } from 'react-router-dom'
-import NavBar from './components/NavBar'
-import Home from './pages/Home'
+import Navigatie from './components/Navigatie'
+import Acasa from './pages/Acasa'
 import DespreCompanie from './pages/DespreCompanie'
-import Portfolio  from './pages/Portfolio'
-import Services from './pages/Services/Services'
-import Maintenance from './pages/Services/Maintenance'
-import Installation from './pages/Services/Installation'
-import Consultance from './pages/Services/Consultance'
+import Portofoliu from './pages/Portofoliu'
+import Servicii from './pages/Servicii/Servicii'
+import Mentenanta from './pages/Servicii/Mentenanta'
+import Instalare from './pages/Servicii/Instalare'
+import Consultanta from './pages/Servicii/Consultanta'
 import Contact from './pages/Contact'
 import './App.css'
 
 function App() {
   return (
     <>
-      <NavBar />
+      <Navigatie />
     <main className="main-content">
     <Routes>
-      <Route path='/' element={<Home />} />
+      <Route path='/' element={<Acasa />} />
       <Route path='/despre-companie' element={<DespreCompanie />} />
-      <Route path='/portofoliu' element={<Portfolio />} />
+      <Route path='/portofoliu' element={<Portofoliu />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path='/servicii' element={<Services />} />
-      <Route path='/servicii/mentenanta' element={<Maintenance />} />
-      <Route path='/servicii/instalare' element={<Installation />} />
-      <Route path='/servicii/consultanta' element={<Consultance />} />  
+      <Route path='/servicii' element={<Servicii />} />
+      <Route path='/servicii/mentenanta' element={<Mentenanta />} />
+      <Route path='/servicii/instalare' element={<Instalare />} />
+      <Route path='/servicii/consultanta' element={<Consultanta />} />
 
     
 
@@ -36,4 +36,3 @@ function App() {
 
 export default App;
  
-

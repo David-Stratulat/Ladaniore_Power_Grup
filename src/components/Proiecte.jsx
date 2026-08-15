@@ -1,6 +1,6 @@
 import logo from "../assets/logo.png"
 import text from "../assets/text.png"
-export const projects = [
+export const proiecte = [
   {
     id: 1,
     title: "Constructii rezidentiale",

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../css/HamburgerMenu.css";
+import '../css/MeniuMobil.css';
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-function HamburgerMenu() {
+function MeniuMobil() {
   const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
@@ -56,4 +56,4 @@ function HamburgerMenu() {
   );
 }
 
-export default HamburgerMenu;
+export default MeniuMobil;

@@ -1,0 +1,5 @@
+import { Link } from 'react-router-dom';
+import { ArrowUpRight, Mail, Phone, MapPin } from 'lucide-react';
+import '../css/Footer.css';
+function Footer() { return <footer className="contact-section"><div className="contact-card"><div className="footer-intro"><span>AI UN PROIECT?</span><h2>Hai să-l punem<br />în mișcare.</h2><a href="tel:0742042237">0742 042 237 <ArrowUpRight size={18}/></a></div><div className="footer-column"><h3>Contact</h3><a href="mailto:office@ladaniore.ro"><Mail size={17}/> office@ladaniore.ro</a><a href="tel:0742042237"><Phone size={17}/> 0742 042 237</a><p><MapPin size={17}/> București, România</p></div><div className="footer-column"><h3>Explorează</h3><Link to="/despre-companie">Despre companie</Link><Link to="/servicii">Servicii</Link><Link to="/portofoliu">Portofoliu</Link><Link to="/contact">Contact</Link></div></div><div className="footer-bottom">© {new Date().getFullYear()} Ladaniore Power Grup SRL <span>Instalații cu responsabilitate.</span></div></footer>; }
+export default Footer;
