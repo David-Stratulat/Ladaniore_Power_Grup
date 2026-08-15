@@ -1,0 +1,43 @@
+name: Publică site-ul pe GitHub Pages
+
+on:
+  push:
+    branches: ['master']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  publica:
+    environment:
+      name: github-pages
+      url: ${{ steps.publicare.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Preia codul
+        uses: actions/checkout@v4
+      - name: Configurează Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Instalează dependențele
+        run: npm ci
+      - name: Creează versiunea pentru publicare
+        run: npm run build
+      - name: Configurează GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Încarcă site-ul
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+      - name: Publică site-ul
+        id: publicare
+        uses: actions/deploy-pages@v4
