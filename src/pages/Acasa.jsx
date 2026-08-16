@@ -16,7 +16,6 @@ function Acasa() {
         <p>Instalații electrice, termice și sisteme de siguranță executate responsabil, de la proiect până la punerea în funcțiune.</p>
         <div className="home-hero-actions">
           <a href="tel:0742042237" className="home-primary-btn">Sună acum <span>0742 042 237</span></a>
-          <a href="#services" className="home-secondary-btn">Descoperă serviciile <b>↓</b></a>
         </div>
       </div>
       <div className="hero-bottom-note"><span>01</span> Soluții tehnice pentru proiecte rezidențiale și comerciale</div>
